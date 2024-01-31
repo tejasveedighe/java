@@ -62,9 +62,57 @@ class Test {
 }
 
 
+class Human {
+    protected String name;
+
+    public Human(String name) {
+        this.name = name;
+    }
+
+    public Human() {
+        this.name = "Tejasvee";
+    }
+    public void talk() {
+        System.out.println("Hello Nature, i am " + this.name);
+    }
+}
+
+class BabyHuman extends Human {
+    public BabyHuman(String name) {
+        super(name);
+    }
+
+    public BabyHuman() {
+        super();
+    }
+
+    public void talk() {
+        System.out.println("I cannot talk, my name is " + super.name);
+    }
+
+}
+
+class Man extends Person {
+    public Man(String name) {
+        super(name);
+    }
+    public Man() {
+        super();
+    }
+
+    public void talk() {
+        System.out.println("I am a Man, my name is " + super.name);
+    }
+}
 
 public class Main {
     public static void main(String[] args) {
         // write the code here
+
+        Human Tejasvee = new Human("Tejasvee");
+        Tejasvee.talk();
+
+        BabyHuman Dexter = new BabyHuman("Dexter");
+        Dexter.talk();
     }
 }
