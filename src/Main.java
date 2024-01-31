@@ -1,5 +1,11 @@
 import java.lang.*;
 class Person {
+    private int secretId;
+    private String secretAPIKey;
+    protected int someValue; // the sub class can access it within the same class or package
+
+    int defaultSpecifier; // no specifier so it package-private
+
     String name;
     int id = 0;
     /*
@@ -29,8 +35,31 @@ class Person {
     }
 }
 
+class Employee {
+    private int salary;
+    public int emp_id;
+
+    static int count = 0;
+
+    public Employee(int salary) {
+        this.salary = salary;
+        this.emp_id = ++count;
+    }
+
+    public int getSalary() {
+        return this.salary;
+    }
+}
+
 public class Main {
     public static void main(String[] args) {
         // write the code here
+        Employee Tejasvee = new Employee(12_000);
+        Employee Dexter = new Employee(15_000);
+
+
+        // the sum total salaries ?
+        int totalSalaries = Tejasvee.getSalary() + Dexter.getSalary();
+        System.out.println(totalSalaries);
     }
 }
