@@ -36,7 +36,10 @@ class Person {
 }
 
 class Employee {
-    private int salary;
+    // final variables are constant variables
+    // final methods are created to prevent method overriding
+    // final classes cannot be inherited
+    final private int salary;
     public int emp_id;
 
     static int count = 0;
@@ -51,15 +54,17 @@ class Employee {
     }
 }
 
+class Test {
+    static final int var;
+    static {
+        var = 0;
+    }
+}
+
+
+
 public class Main {
     public static void main(String[] args) {
         // write the code here
-        Employee Tejasvee = new Employee(12_000);
-        Employee Dexter = new Employee(15_000);
-
-
-        // the sum total salaries ?
-        int totalSalaries = Tejasvee.getSalary() + Dexter.getSalary();
-        System.out.println(totalSalaries);
     }
 }
